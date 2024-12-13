@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Account</title>
+</head>
+<body>
+    <h1>Account Summary</h1>
+    <p>Balance: ${{ account.balance }}</p>
+    <h2>Transactions</h2>
+    <ul>
+        {% for transaction in transactions %}
+            <li>
+                {{ transaction.transaction_type }}: ${{ transaction.amount }} on {{ transaction.created_at }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_transaction' %}">Add Transaction</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Transaction</title>
+</head>
+<body>
+    <h1>Add Transaction</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Type:</label>
+        <select name="transaction_type">
+            <option value="deposit">Deposit</option>
+            <option value="withdrawal">Withdrawal</option>
+        </select>
+        <label>Amount:</label>
+        <input type="number" step="0.01" name="amount" required>
+        <button type="submit">Submit</button>
+        <br>
+        <br>
+        <br>
+        <a href="{% url 'home' %}" >Volver al inicio</a>
+
+    </form>
+</body>
+</html>
